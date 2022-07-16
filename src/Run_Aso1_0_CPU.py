@@ -17,7 +17,7 @@ if __name__ == '__main__':
     srcdir = os.getcwd()
     datadir = workdir + '/data/'
     outputdir = workdir + '/output/'
-
+    cpu_number = 32
     seed = 0
 
     obs_series = pd.read_csv(datadir + 'data.csv', delimiter=',', header = None)
@@ -68,7 +68,7 @@ if __name__ == '__main__':
         del(D_t_next)
         del(X_t_particle)
         del(H_t_particle)
-        pool = multiprocessing.Pool()
+        pool = multiprocessing.Pool(cpu_number)
         Output = pool.map(recursive, Input)
         del(Input)
 
