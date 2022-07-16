@@ -9,6 +9,7 @@
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=56G
+#SBATCH --exclude=mcn28
 
 module load python/booth/3.10/3.10.4
 
